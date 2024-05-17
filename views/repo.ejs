@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Details</title>
+</head>
+<body>
+    <h1>Repository: <%= repo.name %></h1>
+    <p><strong>Description:</strong> <%= repo.description %></p>
+    <p><strong>URL:</strong> <a href="<%= repo.url %>"><%= repo.url %></a></p>
+    <p><strong>Created At:</strong> <%= repo.created_at %></p>
+    <p><strong>Updated At:</strong> <%= repo.updated_at %></p>
+    <p><strong>Languages:</strong> <%= repo.languages %></p>
+    <h2>Commits</h2>
+    <ul>
+        <% repo.commits.forEach(commit => { %>
+            <li>
+                <strong>Date:</strong> <%= commit.date %> <br>
+                <strong>Hash:</strong> <%= commit.hash %> <br>
+                <strong>Message:</strong> <%= commit.message %>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
